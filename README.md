@@ -13,12 +13,39 @@ Just a nigh-useless analog joystick project for Atari 8-bit computers. My work i
 * 1N4001 Diode
 * R1 - 100 Ohm
 * R2 - 10 kOhm
-* R3 - 2.2 kOhm
-* R4 - 560 Ohm
+* R3 - 2.2 kOhm ,  R4 - 560 Ohm ( I don't have 2.7k )
 * C1,C2 22nF capacitors
 
 
 
+
+TODO: relearn KiCad and make a proper schematic.
+
+PADDLE 0 POTGO check + PADDLE 0 PULSE
+PADDLE 1 PULSE:
+```txt
+Atari Port 1 Pin 9 (POT X1) <------------------------------
+                               |                          |
+                        [ 100Ω Resistor ]          [ 1N4001 Diode ]
+                               |                    (Cathode ==|<-- Anode) (stripe facing atari)
+                               |                          |
+        Arduino Pin D6 <-------+                          +-> Arduino Pin D3
+
+Atari Port 1 Pin 5 (POT Y1) <--- [ 1N4001 Diode (Cathode --|<-- Anode) ] <-- Arduino Pin D4 (stripe facing atari)
+
+
+       POT LINE (5V) ---+   
+                        |
+                        R 2.7k  (actually used 2.2k + 560 ~2.76k)
+                        |
+ D7 ------------------------ <- Reference Voltage (e.g., ~3.8V) 10k/(2.7k +10k )
+                        |
+                        R 10k 
+                        |
+                        v   
+                       0V
+
+```
 
 
 
