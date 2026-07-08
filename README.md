@@ -17,42 +17,16 @@ My work is largely based on:
 **_IMPORTANT_: Any circuits in this project are experimental. I am not a practicing electrical engineer. The circuit diagrams I put (will put) here are what I've tested on my Ataris. The circuits work for me, but I'm _not_ an expert at hardware design. It's possible that I'm doing something incorrectly that may damage the computer. USE THIS PROJECT AT YOUR OWN RISK**
 
 * Arduino UNO R3 (tested on a clone. Will try Nano V3 clones soon)
-* 1N4001 Diode
+* D1, D2 - 1N4001 Diode
 * R1 - 100 Ohm
 * R2 - 10 kOhm
-* R3 - 2.2 kOhm ,  R4 - 560 Ohm ( I don't have 2.7k )
-* C1,C2 22nF capacitors
+* R3 - 2.7 kOhm ( I ued 2.2k + 560 ~= 2.76kOhm. The main thing is to get a voltage divider in this range for the comparator )
+* C1,C2 - 22nF
+* RV1, RV2 - 10 kOhm ( basic thumbstick )
+
+  
 
 
-
-
-TODO: relearn KiCad and make a proper schematic.
-
-PADDLE 0 POTGO check + PADDLE 0 PULSE
-PADDLE 1 PULSE:
-```txt
-Atari Port 1 Pin 9 (POT X1) <------------------------------
-                               |                          |
-                        [ 100Ω Resistor ]          [ 1N4001 Diode ]
-                               |                    (Cathode ==|<-- Anode) (stripe facing atari)
-                               |                          |
-        Arduino Pin D6 <-------+                          +-> Arduino Pin D3
-
-Atari Port 1 Pin 5 (POT Y1) <--- [ 1N4001 Diode (Cathode --|<-- Anode) ] <-- Arduino Pin D4 (stripe facing atari)
-
-
-       POT LINE (5V) ---+   
-                        |
-                        R 2.7k  (actually used 2.2k + 560 ~2.76k)
-                        |
- D7 ------------------------ <- Reference Voltage (e.g., ~3.8V) 10k/(2.7k +10k )
-                        |
-                        R 10k 
-                        |
-                        v   
-                       0V
-
-```
 
 
 
