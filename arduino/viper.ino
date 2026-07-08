@@ -5,8 +5,8 @@
 const uint8_t potX1pin = 3;
 const uint8_t potY1pin = 4;
 
-const uint8_t potX1pin = 8;
-const uint8_t potY1pin = 9;
+const uint8_t potX2pin = 2;
+const uint8_t potY2pin = 5;
 
 const uint8_t thumbstick1Xpin = A0;
 const uint8_t thumbstick1Ypin = A1;
@@ -59,11 +59,21 @@ ISR(TIMER2_COMPA_vect)
       // turn up x axis
       PORTD |= (1 << PD3);
     }
+
+        if (hline == currPot2Y) {
+      // turn up y axis
+      PORTD |= (1 << PD5);
+    }
+
+    if (hline == currPot2X) {
+      // turn up x axis
+      PORTD |= (1 << PD2);
+    }
     ++hline;
 
   } else if (hline == FRAME_END) {
     // clear them
-    PORTD &= ~((1 << PD3) | (1 << PD4));
+    PORTD &= ~((1 << PD3) | (1 << PD4) | (1 << PD2) | (1 << PD5));
 
 
     ACSR |= (1 << ACI);   // clear any pending interrupt bit
@@ -78,7 +88,7 @@ ISR(TIMER2_COMPA_vect)
 ISR(ANALOG_COMP_vect)
 {
   // Keep  output pins low while POKEY is discharging the POT lines.
-  PORTD &= ~((1 << PD3) | (1 << PD4) | (1 << PD8) | (1 << PD9));
+  PORTD &= ~((1 << PD3) | (1 << PD4) | (1 << PD2) | (1 << PD5));
 
   // update the current readings
   currPot1X = nextPot1X;
@@ -156,3 +166,4 @@ void loop()
 
   delay(5);
 }
+
