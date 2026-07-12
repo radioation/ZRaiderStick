@@ -32,11 +32,13 @@ const uint8_t thumbstick1Ypin = A1;
 const uint8_t thumbstick2Xpin = A2;
 const uint8_t thumbstick2Ypin = A3;
 
+#ifdef DEBUG
 // Global variables to store the absolute Min and Max values found
 uint16_t min1X = 1023, max1X = 0;
 uint16_t min1Y = 1023, max1Y = 0;
 uint16_t min2X = 1023, max2X = 0;
 uint16_t min2Y = 1023, max2Y = 0;
+#endif
 
 
 // Observed single axis input range seems to be 0 to 222 but I see 1-225 in PADDLE() reads. 
