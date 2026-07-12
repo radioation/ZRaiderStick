@@ -2,6 +2,25 @@
 #include <avr/interrupt.h>
 #include <util/atomic.h>
 
+#define DEBUG 1   
+
+#ifdef DEBUG
+  #define DEBUG_BEGIN(speed) Serial.begin(speed)
+  #define DEBUG_PRINT(x)     Serial.print(x)
+  #define DEBUG_PRINTF(format, ...) { \
+    char _dbgBuf[64]; \
+    snprintf(_dbgBuf, sizeof(_dbgBuf), format, ##__VA_ARGS__); \
+    Serial.println(_dbgBuf); \
+  }
+  #define DEBUG_PRINTLN(x)     Serial.println(x)
+#else
+  #define DEBUG_BEGIN(speed)
+  #define DEBUG_PRINT(x)
+  #define DEBUG_PRINTF(x)
+  #define DEBUG_PRINTLN(x)
+#endif
+
+
 const uint8_t potX1pin = 3;
 const uint8_t potY1pin = 4;
 
@@ -12,6 +31,12 @@ const uint8_t thumbstick1Xpin = A0;
 const uint8_t thumbstick1Ypin = A1;
 const uint8_t thumbstick2Xpin = A2;
 const uint8_t thumbstick2Ypin = A3;
+
+// Global variables to store the absolute Min and Max values found
+uint16_t min1X = 1023, max1X = 0;
+uint16_t min1Y = 1023, max1Y = 0;
+uint16_t min2X = 1023, max2X = 0;
+uint16_t min2Y = 1023, max2Y = 0;
 
 
 // Observed single axis input range seems to be 0 to 222 but I see 1-225 in PADDLE() reads. 
@@ -149,6 +174,20 @@ void loop()
   const uint16_t raw1Y = 1023 - analogRead(thumbstick1Ypin);
   const uint16_t raw2X = analogRead(thumbstick2Xpin);
   const uint16_t raw2Y = 1023 - analogRead(thumbstick2Ypin);
+
+  #ifdef DEBUG
+    //  get min/max vals
+    if (raw1X < min1X) min1X = raw1X;  if (raw1X > max1X) max1X = raw1X;
+    if (raw1Y < min1Y) min1Y = raw1Y;  if (raw1Y > max1Y) max1Y = raw1Y;
+    if (raw2X < min2X) min2X = raw2X;  if (raw2X > max2X) max2X = raw2X;
+    if (raw2Y < min2Y) min2Y = raw2Y;  if (raw2Y > max2Y) max2Y = raw2Y;
+
+    DEBUG_PRINTF("ST1 X: [%d] Min:%d Max:%d", raw1X, min1X, max1X);
+    DEBUG_PRINTF("ST1 Y: [%d] Min:%d Max:%d", raw1Y, min1Y, max1Y);
+    DEBUG_PRINTF("ST2 X: [%d] Min:%d Max:%d", raw2X, min2X, max2X);
+    DEBUG_PRINTF("ST2 Y: [%d] Min:%d Max:%d", raw2Y, min2Y, max2Y);
+    DEBUG_PRINTF("-----------------------------------");
+  #endif
 
   // map to usable range (rounded values()
   const uint16_t mapped1X = MIN_RANGE + (((uint32_t)raw1X * (MAX_RANGE - MIN_RANGE) + 511) / 1023) + PULSE_DELAY;
