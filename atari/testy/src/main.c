@@ -93,11 +93,11 @@ int main(void)
     GTIA_WRITE.sizep0 = 0x00;
 
     OS.color1 = 0x0F; // text
-    OS.color2 = 0x00; // bg
-    OS.color4 = 0x00;
+    OS.color2 = 0x98; // bg
+    OS.color4 = 0x98;
     OS.gprior = 1;
-    OS.pcolr0 = 0x47;
-    OS.pcolr1 = 0x87;
+    OS.pcolr0 = 0x42;
+    OS.pcolr1 = 0xC2;
 
     player0 = pmgMem + 1024;// In single-line PM mode, player 0 starts at PM base + 1024.
     player1 = pmgMem + 1280;// player 1 starts at PM base + 1280.
@@ -148,7 +148,7 @@ int main(void)
         gotoxy( 11,12 );                     
         cputc('R'+ ( ~stick0 & 0x08 ?  128 : 0));
         gotoxy( 13,10 );
-        cputc('F'+ (PEEK(644) ? 128 : 0));
+        cputc('F'+ (PEEK(644) ? 0 : 128));
         // sticks
         stick1 = PEEK(633);
         gotoxy( 29,10 );
@@ -160,7 +160,7 @@ int main(void)
         gotoxy( 31,12 );
         cputc('R'+ ( ~stick1 & 0x08 ?  128 : 0));
         gotoxy( 33,10 );
-        cputc('F'+ (PEEK(645) ? 128 : 0));
+        cputc('F'+ (PEEK(645) ? 0 : 128));
     }
 
     // nevah!
