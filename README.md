@@ -1,3 +1,4 @@
+**_IMPORTANT_**: This is still a work in progress. I'm occasionally seeing it get stuck and I"m still sorting that out.
 # Z Raider Stick
 Z Raider - Analog Joystick for Atari 800/XL/XE Computers
 
