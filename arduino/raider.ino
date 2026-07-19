@@ -1,6 +1,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/atomic.h>
+#include <EEPROM.h>
 
 //#define DEBUG 1
 
@@ -30,25 +31,42 @@ const uint8_t thumbXpin = A0;
 const uint8_t thumbYpin = A1;
 
 
-//#ifdef DEBUG
 // Global variables to store the absolute Min and Max values found
-uint16_t minX = 1023, maxX = 0;
-uint16_t minY = 1023, maxY = 0; 
-//#endif
-uint16_t midX = 511, midY = 511;
+// uint16_t minX = 1023, maxX = 0;
+// uint16_t minY = 1023, maxY = 0; 
+// uint16_t midX = 511, midY = 511;
+struct CalibrationData {
+  uint16_t minX;
+  uint16_t maxX;
+  uint16_t midX;
+  uint16_t minY;
+  uint16_t maxY;
+  uint16_t midY;
+};
+CalibrationData cal;
+
 #define CALIBRATION_DURATION_MS 10000
 #define CAL_BUTTON_LOCKOUT_MS 1000
 #define MID_SAMPLE_COUNT 10
 unsigned long lockoutStart = 0;
 unsigned long calStart = 0;
+#define CAL_WRITTEN_FLAG_ADDR 32
+const uint8_t WRITTEN_FLAG_VAL = 0xAA;
 
- 
+void saveCalibration() {
+  // *IMPORTANT* EEPROM has limited writes, don't call repeatedly in a fast loop
+  EEPROM.put(0, cal);
+  EEPROM.write( CAL_WRITTEN_FLAG_ADDR, WRITTEN_FLAG_VAL);
+}
 
+void loadCalibration() {
+  EEPROM.get(0, cal);
+}
 
 
 // check for hline getting stuck 
 unsigned int hlineStuckCounter = 0; 
-const unsigned int HLINE_STUCK_LIMIT = 10;  // just a guess
+const unsigned int HLINE_STUCK_LIMIT = 5;  // just a guess
 
 // Observed single axis input range seems to be 0 to 222 but I see 1-225 in PADDLE() reads. 
 // * I did see some strange behavior with 2-axis with values above 210 on my XL and maybe at 0 or 1.  
@@ -172,6 +190,20 @@ void setup()
     | (1 << ACIS1);  // Unlike Stingray/5200, I trigger on FALLING edge (when POKEY clamps to 0V)
 
   sei();
+
+  if( EEPROM.read( CAL_WRITTEN_FLAG_ADDR) == WRITTEN_FLAG_VAL ) {
+    loadCalibration();
+
+  } else {
+    // assume whole range.
+    cal.maxX = 1023;
+    cal.minX = 0;
+    cal.midX = 511;
+    cal.maxY = 1023;
+    cal.minY = 0;
+    cal.midY = 511;
+  }
+
   runLoop = mainLoop;
 }
 
@@ -190,17 +222,17 @@ void mainLoop()
   // Read modern thumbsticks (0 to 1023)
   const uint16_t rawX = analogRead(thumbXpin);
   const uint16_t rawY = 1023 - analogRead(thumbYpin);
-// #ifdef DEBUG
+ #ifdef DEBUG
 //   //  get min/max vals
 //   if (rawX < minX) minX = rawX;  if (rawX > maxX) maxX = rawX;
 //   if (rawY < minY) minY = rawY;  if (rawY > maxY) maxY = rawY;
-//   DEBUG_PRINTF("ST1 X: [%d] Min:%d Max:%d ST1 Y: [%d] Min:%d Max:%d h: %d", rawX, minX, maxX, rawY, minY, maxY, hline); 
+   DEBUG_PRINTF("ST1 X: [%d] Min:%d Max:%d ST1 Y: [%d] Min:%d Max:%d h: %d", rawX, cal.minX, cal.maxX, rawY, cal.minY, cal.maxY, hline); 
 
-// #endif
+ #endif
 
   // map to usable range (rounded values()
-  const uint16_t mappedX = MIN_RANGE +   (((uint32_t)(rawX - minX) * (MAX_RANGE - MIN_RANGE) + (midX-minX)) / (maxX-minX)) +  PULSE_DELAY;
-  const uint16_t mappedY = MIN_RANGE + (((uint32_t)(rawY - minY)* (MAX_RANGE - MIN_RANGE) + (midY-minY)) / (maxY-minY)) + PULSE_DELAY;
+  const uint16_t mappedX = MIN_RANGE +   (((uint32_t)(rawX - cal.minX) * (MAX_RANGE - MIN_RANGE) + (cal.midX-cal.minX)) / (cal.maxX-cal.minX)) +  PULSE_DELAY;
+  const uint16_t mappedY = MIN_RANGE + (((uint32_t)(rawY - cal.minY)* (MAX_RANGE - MIN_RANGE) + (cal.midY-cal.minY)) / (cal.maxY-cal.minY)) + PULSE_DELAY;
 
   // save for next interrupt
   ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
@@ -239,11 +271,11 @@ void startCalibration() {
     sumY += 1023 - analogRead(thumbYpin);
     delay(10);
    }
-   midX = sumX / MID_SAMPLE_COUNT;
-   midY = sumY / MID_SAMPLE_COUNT;
+   cal.midX = sumX / MID_SAMPLE_COUNT;
+   cal.midY = sumY / MID_SAMPLE_COUNT;
  
- minX = 1023; maxX = 0;
- minY = 1023; maxY = 0; 
+ cal.minX = 1023; cal.maxX = 0;
+ cal.minY = 1023; cal.maxY = 0; 
 
   calStart = millis();
    runLoop = calibrationLoop;
@@ -254,10 +286,10 @@ void calibrationLoop() {
   const uint16_t rawY = 1023 - analogRead(thumbYpin);
  
   //  get min/max vals
-  if (rawX < minX) minX = rawX;  
-  if (rawX > maxX) maxX = rawX;
-  if (rawY < minY) minY = rawY;  
-  if (rawY > maxY) maxY = rawY;
+  if (rawX < cal.minX) cal.minX = rawX;  
+  if (rawX > cal.maxX) cal.maxX = rawX;
+  if (rawY < cal.minY) cal.minY = rawY;  
+  if (rawY > cal.maxY) cal.maxY = rawY;
 
 #ifdef DEBUG 
  // DEBUG_PRINTF("ST1 X: [%d] Min:%d Max:%d ST1 Y: [%d] Min:%d Max:%d h: %d", rawX, minX, maxX, rawY, minY, maxY, hline); 
@@ -267,8 +299,9 @@ void calibrationLoop() {
 
   if( timedOut || userQuit ) {
     runLoop = mainLoop;
+    saveCalibration(); // eeprom has limited life only call when exiting calibration
   #ifdef DEBUG
-      DEBUG_PRINTF("MID X: [%d] Min: %d Max: %d MID Y: [%d] Min: %d Max: %d", midX, minX, maxX,   midY, minY, maxY);
+      DEBUG_PRINTF("MID X: [%d] Min: %d Max: %d MID Y: [%d] Min: %d Max: %d", cal.midX, cal.minX, cal.maxX,   cal.midY, cal.minY, cal.maxY);
 #endif
   }
 }
