@@ -2,7 +2,7 @@
 #include <avr/interrupt.h>
 #include <util/atomic.h>
 
-#define DEBUG 1
+//#define DEBUG 1
 
 #ifdef DEBUG
   #define DEBUG_BEGIN(speed) Serial.begin(speed)
