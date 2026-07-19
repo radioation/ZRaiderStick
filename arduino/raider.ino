@@ -199,8 +199,8 @@ void mainLoop()
 // #endif
 
   // map to usable range (rounded values()
-  const uint16_t mappedX = MIN_RANGE +   (((uint32_t)rawX * (MAX_RANGE - MIN_RANGE) + 511) / 1023) +  PULSE_DELAY;
-  const uint16_t mappedY = MIN_RANGE + (((uint32_t)rawY * (MAX_RANGE - MIN_RANGE) + 511) / 1023) + PULSE_DELAY;
+  const uint16_t mappedX = MIN_RANGE +   (((uint32_t)(rawX - minX) * (MAX_RANGE - MIN_RANGE) + (midX-minX)) / (maxX-minX)) +  PULSE_DELAY;
+  const uint16_t mappedY = MIN_RANGE + (((uint32_t)(rawY - minY)* (MAX_RANGE - MIN_RANGE) + (midY-minY)) / (maxY-minY)) + PULSE_DELAY;
 
   // save for next interrupt
   ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
