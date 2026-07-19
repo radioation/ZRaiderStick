@@ -116,6 +116,13 @@ ISR(TIMER2_COMPA_vect)
 
     ACSR |= (1 << ACI);   // clear any pending interrupt bit
     ACSR |= (1 << ACIE);  // reactivate analog comparator
+
+    // check comparator output bit 
+    if( !( ACSR & (1 << ACO))) {
+      // line is already low?
+      ACSR &= ~(1 << ACIE);
+      hline = 0;    
+    }
     ++hline;
   }
 
