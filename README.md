@@ -1,4 +1,5 @@
-**_IMPORTANT_**: This is still a work in progress. I'm occasionally seeing it get stuck and I"m still sorting that out.
+**_IMPORTANT_**: This is still a work in progress. I'm occasionally seeing it get stuck and I'm still sorting that out. Expect changes.
+
 # Z Raider Stick
 Z Raider - Analog Joystick for Atari 800/XL/XE Computers
 
@@ -19,11 +20,12 @@ My work is largely based on:
 
 * Arduino UNO R3 or Nano V3. I've tested on Elegoo clones.
 * D1, D2 - 1N4001 Diode
+* D3 - 1N5817 Schottky Diode
 * R1 - 100 Ohm
 * R2 - 10 kOhm
-* R3 - 2.7 kOhm ( I ued 2.2k + 560 ~= 2.76kOhm. The main thing is to get a voltage divider in this range for the comparator )
+* R3 - 2.7 kOhm ( I used 2.2k + 560 ~= 2.76kOhm. The main thing is to get a voltage divider in this range for the comparator )
 * C1,C2 - 22nF
-* RV1, RV2 - 10 kOhm ( basic thumbstick )
+* RV1, RV2 - 10 kOhm ( basic thumbstick, I'm currently looking at RKJXV1224005 thumbsticks in KiCAD )
 
   
 Atari 800/XL/XE Schematic:
