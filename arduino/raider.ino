@@ -17,7 +17,7 @@
 #else
   #define DEBUG_BEGIN(speed)
   #define DEBUG_PRINT(x)
-  #define DEBUG_PRINTF(x)
+  #define DEBUG_PRINTF(format, ...)
   #define DEBUG_PRINTLN(x)
 #endif
 
@@ -334,3 +334,4 @@ void calibrationLoop() {
 void loop() {
     runLoop();
 }
+
