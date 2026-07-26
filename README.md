@@ -7,7 +7,7 @@ Just a nigh-useless analog joystick project for Atari 8-bit computers. It's mean
 work with my [port](https://github.com/radioation/StarRaidersMods) of the Atari 5200 
 Star Raiders analog controls to the 8-bit version. 
 
-Z Raider may work with other computers and consoles but I've not tested this. I've done a little work with the C64, but it's not ready yet.
+Z Raider may work with other Atari consoles but I've not tested this. I've done a little work with the C64, the current arduino code will absolutely _not_ work with the C64.
 
 
 My work is largely based on:
@@ -23,10 +23,12 @@ My work is largely based on:
 * D3 - 1N5817 Schottky Diode
 * R1 - 100 Ohm
 * R2,R3 - 330 Ohm
-* R4 - 10 kOhm
-* R5 - 2.7 kOhm ( I used 2.2k + 560 ~= 2.76kOhm. The main thing is to get a voltage divider in this range for the comparator )
-* C1,C2 - 22nF
-* RV1, RV2 - 10 kOhm ( basic thumbstick, I'm currently looking at RKJXV1224005 thumbsticks in KiCAD )
+* R4 - 2.7 kOhm ( I used 2.2k + 560 ~= 2.76kOhm. The main thing is to get a voltage divider in this range for the comparator )
+* R5 - 10 kOhm
+* C1,C2 - 100 nF
+* S1B, S1C - 10 kOhm ( basic thumbstick, I'm currently looking at RKJXV1224005 thumbsticks in KiCAD )
+* F1 - Polyfuse 100mA (Optional)
+* 6 push button switches
 
   
 ## Atari 800/XL/XE Schematic:
