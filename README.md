@@ -1,4 +1,4 @@
-**_IMPORTANT_**: This is still a work in progress. I'm occasionally seeing it get stuck and I'm still sorting that out. Expect changes.
+**_IMPORTANT_**: This is still a work in progress. 
 
 # Z Raider Stick
 Z Raider - Analog Joystick for Atari 800/XL/XE Computers
@@ -22,8 +22,9 @@ My work is largely based on:
 * D1, D2 - 1N4001 Diode
 * D3 - 1N5817 Schottky Diode
 * R1 - 100 Ohm
-* R2 - 10 kOhm
-* R3 - 2.7 kOhm ( I used 2.2k + 560 ~= 2.76kOhm. The main thing is to get a voltage divider in this range for the comparator )
+* R2,R3 - 330 Ohm
+* R4 - 10 kOhm
+* R5 - 2.7 kOhm ( I used 2.2k + 560 ~= 2.76kOhm. The main thing is to get a voltage divider in this range for the comparator )
 * C1,C2 - 22nF
 * RV1, RV2 - 10 kOhm ( basic thumbstick, I'm currently looking at RKJXV1224005 thumbsticks in KiCAD )
 
