@@ -246,12 +246,17 @@ void mainLoop()
     } else {
         PORTB &= ~_BV(PB2);
     }
+    DEBUG_PRINTF("cx [%d] cy [%d]", currPotX, currPotY);
 #endif
 
     // Read modern thumbsticks (0 to 1023)
-    const uint16_t rawX = analogRead(thumbXpin);
-    const uint16_t rawY = 1023 - analogRead(thumbYpin);
+    uint16_t rawX = analogRead(thumbXpin);
+    uint16_t rawY = 1023 - analogRead(thumbYpin);
 
+    if( rawX < cal.minX ) rawX = cal.minX;
+    if( rawX > cal.maxX ) rawX = cal.maxX;
+    if( rawY < cal.minY ) rawY = cal.minY;
+    if( rawY > cal.maxY ) rawY = cal.maxY;
 
 
     DEBUG_PRINTF("ST1 X: [%d] Min:%d Max:%d ST1 Y: [%d] Min:%d Max:%d h: %d", rawX, cal.minX, cal.maxX, rawY, cal.minY, cal.maxY, hline); 
@@ -260,7 +265,7 @@ void mainLoop()
     // map  pot ranges  to usable range  TODO: Consider a non-linear mapping for this.
     const uint16_t mappedX = MIN_RANGE +   (((uint32_t)(rawX - cal.minX) * (MAX_RANGE - MIN_RANGE) + (cal.midX-cal.minX)) / (cal.maxX-cal.minX)) +  PULSE_DELAY;
     const uint16_t mappedY = MIN_RANGE + (((uint32_t)(rawY - cal.minY)* (MAX_RANGE - MIN_RANGE) + (cal.midY-cal.minY)) / (cal.maxY-cal.minY)) + PULSE_DELAY;
-
+ 
     // save for next interrupt
     ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
         // nextPotX = 120;  // static value for testing delay stability.
