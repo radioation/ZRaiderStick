@@ -4638,8 +4638,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 146.05 123.19 90)
-		(mirror x)
+		(at 146.05 123.19 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4647,10 +4646,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2fc6bc23-e448-4487-a980-d609a8ca8503")
 		(property "Reference" "C1"
-			(at 144.7862 125.73 0)
+			(at 147.3138 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4661,7 +4659,7 @@
 			)
 		)
 		(property "Value" "100 nF"
-			(at 147.3262 125.73 0)
+			(at 144.7738 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
