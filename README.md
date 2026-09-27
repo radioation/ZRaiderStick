@@ -27,7 +27,7 @@ My work is largely based on:
 * R5 - 10 kOhm
 * C1,C2 - 100 nF
 * S1B, S1C - 10 kOhm ( basic thumbstick, I'm currently looking at RKJXV1224005 thumbsticks in KiCAD )
-* F1 - Polyfuse 100mA (Optional)
+* F1 - Polyfuse 100mA (Optional. Can use 0 Ohm)
 * 6 push button switches
 
   
