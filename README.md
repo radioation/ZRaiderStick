@@ -7,7 +7,9 @@ Just a nigh-useless analog joystick project for Atari 8-bit computers. It's mean
 work with my [port](https://github.com/radioation/StarRaidersMods) of the Atari 5200 
 Star Raiders analog controls to the 8-bit version. 
 
-Z Raider may work with other Atari consoles but I've not tested this. I've done a little work with the C64, the current arduino code will absolutely _not_ work with the C64.
+Z Raider may work with other Atari consoles but I've not tested this. I've done
+a little work with the C64, but it is nowhere near working. The current arduino
+code will absolutely _NOT_ work with the C64.
 
 
 My work is largely based on:
@@ -34,5 +36,3 @@ My work is largely based on:
 ## Atari 800/XL/XE Schematic:
 ![ZRaider schematic](images/ZRaider_schematic.png)
 
-## C64 
-Someday...
