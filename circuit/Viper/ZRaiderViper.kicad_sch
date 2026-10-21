@@ -3179,6 +3179,10 @@
 		(uuid "0eaaf909-f9d3-49e4-b041-964a15ad6e0f")
 	)
 	(no_connect
+		(at 153.67 191.77)
+		(uuid "19da6160-b8f0-4b37-b0a8-aaa044553625")
+	)
+	(no_connect
 		(at 179.07 143.51)
 		(uuid "368d6f2a-a2b7-489d-94d5-b228fc234bec")
 	)
@@ -3207,6 +3211,10 @@
 		(uuid "5fcf9761-7aff-4d33-b3c7-87e6895de453")
 	)
 	(no_connect
+		(at 274.32 148.59)
+		(uuid "689718de-e45a-428f-aca6-86a8a234bf15")
+	)
+	(no_connect
 		(at 153.67 143.51)
 		(uuid "69a9fc7c-035c-45ec-a935-5f0e546df14f")
 	)
@@ -3221,6 +3229,10 @@
 	(no_connect
 		(at 210.82 184.15)
 		(uuid "71d71ab6-d0f6-4d38-8373-a34968ae7e62")
+	)
+	(no_connect
+		(at 153.67 148.59)
+		(uuid "799f3701-57ed-4bbf-b3e9-07794cc9a8ad")
 	)
 	(no_connect
 		(at 210.82 194.31)
@@ -3278,7 +3290,7 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 233.68) (xy 176.53 233.68)
+			(xy 265.43 233.68) (xy 247.65 233.68)
 		)
 		(stroke
 			(width 0)
@@ -3435,6 +3447,16 @@
 			(type default)
 		)
 		(uuid "1ebd7580-b409-425c-af80-e61ce8cb2d14")
+	)
+	(wire
+		(pts
+			(xy 240.03 233.68) (xy 176.53 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f1a641b-53ad-4bba-85d2-7dcc880e6f6a")
 	)
 	(wire
 		(pts
@@ -3638,7 +3660,7 @@
 	)
 	(wire
 		(pts
-			(xy 251.46 229.87) (xy 170.18 229.87)
+			(xy 251.46 229.87) (xy 238.76 229.87)
 		)
 		(stroke
 			(width 0)
@@ -3775,6 +3797,16 @@
 			(type default)
 		)
 		(uuid "72b34789-aa10-4a4d-a256-c7bf8437dad2")
+	)
+	(wire
+		(pts
+			(xy 231.14 229.87) (xy 170.18 229.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74c00dec-67fd-4988-8da7-a1e91b62ec18")
 	)
 	(wire
 		(pts
@@ -5036,6 +5068,87 @@
 			(project "ZRaiderViper"
 				(path "/cee3fad8-cd38-4e35-ae79-7b381e15c120"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 234.95 229.87 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1452eb6c-902a-4424-94e1-a6abeb8c20e9")
+		(property "Reference" "R6"
+			(at 235.966 224.79 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "300"
+			(at 236.2199 227.33 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 235.204 228.854 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 234.95 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1c6622df-1da5-4e2b-80c3-17c82dfcf3bb")
+		)
+		(pin "2"
+			(uuid "7cf2ad79-4785-41a5-baac-00f7c80880b9")
+		)
+		(instances
+			(project "ZRaiderViper"
+				(path "/cee3fad8-cd38-4e35-ae79-7b381e15c120"
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -7540,7 +7653,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Push"
+		(property "Value" "Calibrate"
 			(at 146.05 207.01 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8264,6 +8377,85 @@
 			(project "ZRaiderViper"
 				(path "/cee3fad8-cd38-4e35-ae79-7b381e15c120"
 					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 243.84 233.68 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d03f827b-ad1b-4cd5-9df4-d6b156fbaa34")
+		(property "Reference" "R7"
+			(at 243.84 235.458 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "300"
+			(at 243.586 237.49 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 243.586 234.696 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 243.84 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "34a71466-441f-44f7-ba5b-6e7523b08680")
+		)
+		(pin "2"
+			(uuid "903e6cc4-68a1-4b98-ab62-e0212aaa78e7")
+		)
+		(instances
+			(project "ZRaiderViper"
+				(path "/cee3fad8-cd38-4e35-ae79-7b381e15c120"
+					(reference "R7")
 					(unit 1)
 				)
 			)
