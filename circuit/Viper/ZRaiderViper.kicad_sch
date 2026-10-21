@@ -3177,6 +3177,10 @@
 		(uuid "fb8aac17-cbd0-41fa-8e9b-e99993c8d5d6")
 	)
 	(no_connect
+		(at 252.73 77.47)
+		(uuid "02e4cca6-f366-4118-8b8e-ae5638ae9fb7")
+	)
+	(no_connect
 		(at 210.82 209.55)
 		(uuid "0a2ba49b-db8e-4ab2-98ea-789acd5a7100")
 	)
@@ -5067,7 +5071,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "300"
+		(property "Value" "330"
 			(at 237.998 227.33 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6271,7 +6275,7 @@
 				)
 			)
 		)
-		(property "Value" "300"
+		(property "Value" "330"
 			(at 163.576 198.12 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8294,7 +8298,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "300"
+		(property "Value" "330"
 			(at 156.2099 189.23 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8374,7 +8378,7 @@
 				)
 			)
 		)
-		(property "Value" "300"
+		(property "Value" "330"
 			(at 243.586 237.49 90)
 			(show_name no)
 			(do_not_autoplace no)

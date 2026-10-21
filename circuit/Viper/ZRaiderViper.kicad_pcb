@@ -1129,7 +1129,7 @@
 				)
 			)
 		)
-		(property "Value" "TRIGGER"
+		(property "Value" "TRIGGER_2"
 			(at 0 4.92 0)
 			(layer "F.Fab")
 			(uuid "0dd09059-8556-4f23-b48b-ca2858153b66")
@@ -1355,7 +1355,7 @@
 	(footprint "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-100x"
 		(layer "F.Cu")
 		(uuid "423a03c4-cbe8-4380-8f17-58a79d0f4428")
-		(at 84.75 80.5)
+		(at 84.75 84.5)
 		(descr "Tactile switch, 6x6 mm, H4.3 mm, 6.5 mm pitch, https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf")
 		(tags "Omron B3F-10xx SPST 1P1T")
 		(property "Reference" "SW5"
@@ -1369,7 +1369,7 @@
 				)
 			)
 		)
-		(property "Value" "DOWN"
+		(property "Value" "DOWN_1"
 			(at 3.25 6.5 0)
 			(layer "F.Fab")
 			(uuid "c6c3df92-7407-4e53-bf5a-0f98a7f2b404")
@@ -1901,7 +1901,7 @@
 			(drill 1.1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(A1-D5)")
+			(net "Net-(D4-A)")
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "07355c92-e5d1-47ee-a5a0-18872c238fdf")
@@ -2356,7 +2356,7 @@
 	(footprint "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-100x"
 		(layer "F.Cu")
 		(uuid "57b09cc1-a3b2-4f0e-8a00-c828824fffb8")
-		(at 84.75 72.75)
+		(at 84.75 69)
 		(descr "Tactile switch, 6x6 mm, H4.3 mm, 6.5 mm pitch, https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf")
 		(tags "Omron B3F-10xx SPST 1P1T")
 		(property "Reference" "SW4"
@@ -2370,7 +2370,7 @@
 				)
 			)
 		)
-		(property "Value" "UP"
+		(property "Value" "UP_1"
 			(at 3.25 6.5 0)
 			(layer "F.Fab")
 			(uuid "e0eda6b6-6ed8-468a-96ad-842bbc149b76")
@@ -2607,6 +2607,164 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-100x.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(layer "F.Cu")
+		(uuid "6819515b-c185-4e96-9e8f-414991e5ae46")
+		(at 207.875 51.925)
+		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
+		(tags "resistor handsolder")
+		(property "Reference" "R7"
+			(at 0 -1.65 0)
+			(layer "F.SilkS")
+			(uuid "54c62259-7228-4a49-b43c-568c3d1e3988")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 0 1.65 0)
+			(layer "F.Fab")
+			(uuid "21e04869-2957-4a08-8c57-d4dec2a810b9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea91c461-849d-47b1-af32-af3554410741")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b8777ca4-57ab-43f0-8fcf-143913b3dc97")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "06ba9e66-cebb-4a2b-943b-205befed923a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "R_*")
+		(path "/d03f827b-ad1b-4cd5-9df4-d6b156fbaa34")
+		(sheetname "/")
+		(sheetfile "ZRaiderViper.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -0.227064 -0.735)
+			(end 0.227064 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b1b06db4-bdef-4189-9791-560eae351ff6")
+		)
+		(fp_line
+			(start -0.227064 0.735)
+			(end 0.227064 0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b07581f6-b60f-4d00-ad0d-9d29f54358f3")
+		)
+		(fp_rect
+			(start -1.85 -0.95)
+			(end 1.85 0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "a3313cb0-50cf-4bd9-9d18-99d932447f7c")
+		)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "a8a6c9f2-6c4a-4d9e-9bae-b9b3c00c2ccf")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "7a162499-0637-4717-ba4e-88fdc53bd120")
+			(effects
+				(font
+					(size 0.5 0.5)
+					(thickness 0.08)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -1 0)
+			(size 1.2 1.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.208333)
+			(net "Net-(D4-A)")
+			(pintype "passive")
+			(uuid "b2462be9-4ccc-4a5d-bca7-dd1adb6ef80c")
+		)
+		(pad "2" smd roundrect
+			(at 1 0)
+			(size 1.2 1.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.208333)
+			(net "Net-(A1-D5)")
+			(pintype "passive")
+			(uuid "1996d48a-0793-4bec-a894-f595fbd52ec1")
+		)
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -4182,7 +4340,7 @@
 			(drill 1.1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J2-Pad7)")
+			(net "Net-(A1-+5V)")
 			(pintype "passive")
 			(solder_mask_margin 0.102)
 			(uuid "44477935-4b36-4e8b-812e-3c2da149650e")
@@ -4215,7 +4373,7 @@
 			(drill 1.1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J2-Pad7)")
+			(net "Net-(A1-+5V)")
 			(pintype "passive")
 			(solder_mask_margin 0.102)
 			(uuid "0b4359c8-c128-4ede-8a36-a1574e042125")
@@ -4759,7 +4917,7 @@
 	(footprint "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-100x"
 		(layer "F.Cu")
 		(uuid "7844cf05-2ad9-4455-b585-949a7a668a1c")
-		(at 213.5 71)
+		(at 188.5 72.5)
 		(descr "Tactile switch, 6x6 mm, H4.3 mm, 6.5 mm pitch, https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf")
 		(tags "Omron B3F-10xx SPST 1P1T")
 		(property "Reference" "SW11"
@@ -4773,7 +4931,7 @@
 				)
 			)
 		)
-		(property "Value" "LEFT"
+		(property "Value" "LEFT_2"
 			(at 3.25 6.5 0)
 			(layer "F.Fab")
 			(uuid "14065ff4-c051-41ab-bd62-bc1a414463ac")
@@ -6421,7 +6579,7 @@
 	(footprint "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-100x"
 		(layer "F.Cu")
 		(uuid "9239100b-e585-44af-8d15-84a5a8db32cd")
-		(at 202.75 67)
+		(at 214.5 71.5)
 		(descr "Tactile switch, 6x6 mm, H4.3 mm, 6.5 mm pitch, https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf")
 		(tags "Omron B3F-10xx SPST 1P1T")
 		(property "Reference" "SW8"
@@ -6435,7 +6593,7 @@
 				)
 			)
 		)
-		(property "Value" "RIGHT"
+		(property "Value" "RIGHT_2"
 			(at 3.25 6.5 0)
 			(layer "F.Fab")
 			(uuid "95b86d7b-8c2f-4edb-86b3-d7a1e5ebb80f")
@@ -6988,7 +7146,7 @@
 	(footprint "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-100x"
 		(layer "F.Cu")
 		(uuid "a86c94d1-f461-4542-923b-52041a453b47")
-		(at 202.75 74.75)
+		(at 201.5 64.5)
 		(descr "Tactile switch, 6x6 mm, H4.3 mm, 6.5 mm pitch, https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf")
 		(tags "Omron B3F-10xx SPST 1P1T")
 		(property "Reference" "SW9"
@@ -7002,7 +7160,7 @@
 				)
 			)
 		)
-		(property "Value" "UP"
+		(property "Value" "UP_2"
 			(at 3.25 6.5 0)
 			(layer "F.Fab")
 			(uuid "d63b84b4-441f-4ebc-a288-10be17df066d")
@@ -7182,7 +7340,7 @@
 			(uuid "7c18df34-87fe-4121-a913-ddfe33b989a8")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.25 2.25 0)
+			(at 1.25 1.25 0)
 			(layer "F.Fab")
 			(uuid "03bba8aa-9321-417a-8b2f-2b8349a58b3e")
 			(effects
@@ -7692,7 +7850,7 @@
 			(drill 1.1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(A1-D2)")
+			(net "Net-(D3-A)")
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "11768a7e-c79a-429c-85ec-1fdeabeb7e5d")
@@ -7713,7 +7871,7 @@
 	(footprint "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-100x"
 		(layer "F.Cu")
 		(uuid "bb490886-c9c5-44ef-afb6-ee45d4baf944")
-		(at 190.75 70.75)
+		(at 202.75 81.75)
 		(descr "Tactile switch, 6x6 mm, H4.3 mm, 6.5 mm pitch, https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf")
 		(tags "Omron B3F-10xx SPST 1P1T")
 		(property "Reference" "SW10"
@@ -7727,7 +7885,7 @@
 				)
 			)
 		)
-		(property "Value" "DOWN"
+		(property "Value" "DOWN_2"
 			(at 3.25 6.5 0)
 			(layer "F.Fab")
 			(uuid "ba8acffe-8136-4720-9656-faba5974c0d8")
@@ -7907,7 +8065,7 @@
 			(uuid "b37c9c13-7405-43ca-aaef-e70e5d5fcf8b")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.25 2.25 0)
+			(at -0.75 1.25 0)
 			(layer "F.Fab")
 			(uuid "b52d9429-dfa5-4f57-8326-7279896a3b17")
 			(effects
@@ -8308,7 +8466,7 @@
 				)
 			)
 		)
-		(property "Value" "LEFT"
+		(property "Value" "LEFT_1"
 			(at 3.25 6.5 0)
 			(layer "F.Fab")
 			(uuid "978a031f-cdd6-4598-a8a3-bcd1fa284f83")
@@ -8716,6 +8874,164 @@
 	)
 	(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 		(layer "F.Cu")
+		(uuid "d124472b-e468-443f-aea7-93efece36284")
+		(at 207.875 48.975)
+		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
+		(tags "resistor handsolder")
+		(property "Reference" "R6"
+			(at 0 -1.65 0)
+			(layer "F.SilkS")
+			(uuid "004a78da-c124-48b6-b848-a9becb71c03f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 0 1.65 0)
+			(layer "F.Fab")
+			(uuid "30bc8824-0895-49a0-a57b-13c5b0aa3240")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "98603431-2384-4dd1-899d-4e77e301f367")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4ee2d26f-8c23-4204-aff3-ff3b680b8931")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "69fb9aa5-a2e8-4b25-8b62-a26c10cbe89b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "R_*")
+		(path "/1452eb6c-902a-4424-94e1-a6abeb8c20e9")
+		(sheetname "/")
+		(sheetfile "ZRaiderViper.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -0.227064 -0.735)
+			(end 0.227064 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2e14c0e6-fb9d-4533-a91c-aa0c6a09106c")
+		)
+		(fp_line
+			(start -0.227064 0.735)
+			(end 0.227064 0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "64864a00-a2e5-4374-b6ad-a06ac3c77d70")
+		)
+		(fp_rect
+			(start -1.85 -0.95)
+			(end 1.85 0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6ed6c010-b995-4953-aedb-1b3091d8e327")
+		)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "46cafcbb-1e73-451e-b8b3-23807517f1a1")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "3b148206-417c-4642-8a37-d09ccb70d7b7")
+			(effects
+				(font
+					(size 0.5 0.5)
+					(thickness 0.08)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -1 0)
+			(size 1.2 1.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.208333)
+			(net "Net-(A1-D2)")
+			(pintype "passive")
+			(uuid "c2b6a75f-f484-4fcd-94cb-58a7a064b98a")
+		)
+		(pad "2" smd roundrect
+			(at 1 0)
+			(size 1.2 1.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.208333)
+			(net "Net-(D3-A)")
+			(pintype "passive")
+			(uuid "324c2a27-c532-41bc-a461-30c89d58eefd")
+		)
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(layer "F.Cu")
 		(uuid "d803aa89-38e3-4e0f-852c-772f3f20490c")
 		(at 1.875 0.975)
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
@@ -8731,7 +9047,7 @@
 				)
 			)
 		)
-		(property "Value" "300"
+		(property "Value" "330"
 			(at 0 1.65 0)
 			(layer "F.Fab")
 			(uuid "576294b8-8d59-45b7-904f-d6cb1c2fda12")
@@ -8889,7 +9205,7 @@
 				)
 			)
 		)
-		(property "Value" "RIGHT"
+		(property "Value" "RIGHT_1"
 			(at 3.25 6.5 0)
 			(layer "F.Fab")
 			(uuid "2dac2770-667c-4d94-872d-751ba809a7fb")
@@ -9154,7 +9470,7 @@
 				)
 			)
 		)
-		(property "Value" "TRIGGER"
+		(property "Value" "TRIGGER_1"
 			(at 0 4.92 0)
 			(layer "F.Fab")
 			(uuid "00ad09a6-83dc-4f47-9959-893c24941dbd")
@@ -9728,9 +10044,9 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J2-Pad7)")
+			(net "unconnected-(J2-Pad7)")
 			(pinfunction "7_7")
-			(pintype "passive")
+			(pintype "passive+no_connect")
 			(uuid "c82e613a-e29a-498f-9b08-eefd1716e8b1")
 		)
 		(pad "8" thru_hole circle
@@ -9801,7 +10117,7 @@
 				)
 			)
 		)
-		(property "Value" "300"
+		(property "Value" "330"
 			(at 0 1.65 0)
 			(layer "F.Fab")
 			(uuid "873b41fa-bdfa-4838-9054-1efc3bc552c1")
@@ -10118,7 +10434,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "SW_Push"
+		(property "Value" "Calibrate"
 			(at 3.25 -6.5 180)
 			(layer "B.Fab")
 			(uuid "01733692-f641-43d7-8c35-b43eca137c0f")
