@@ -3113,12 +3113,12 @@
 		(uuid "71164499-db53-42eb-a11e-4d7e23329384")
 	)
 	(no_connect
-		(at 184.15 121.92)
-		(uuid "784f1aff-ea24-4fc6-9537-8a19da4ddb06")
-	)
-	(no_connect
 		(at 129.54 109.22)
 		(uuid "78833583-152d-42f6-82c1-c4052e5f9c57")
+	)
+	(no_connect
+		(at 212.09 106.68)
+		(uuid "7fb759cc-68d4-4219-bcb8-e5e923ac4c18")
 	)
 	(no_connect
 		(at 194.31 106.68)
@@ -3157,6 +3157,10 @@
 		(uuid "d038fd5f-dbd9-4d22-a5bd-ce402ea74470")
 	)
 	(no_connect
+		(at 184.15 121.92)
+		(uuid "d0aaef34-96ca-4980-b82f-aa50e69052df")
+	)
+	(no_connect
 		(at 196.85 132.08)
 		(uuid "d4a7b49d-000d-4235-9b6a-cc2c5943cc82")
 	)
@@ -3166,7 +3170,7 @@
 	)
 	(no_connect
 		(at 184.15 116.84)
-		(uuid "ff53b20a-9a41-4a72-894c-fc9ab1ff311c")
+		(uuid "f161b3ed-5d00-4f59-942a-1debb40587d7")
 	)
 	(wire
 		(pts
@@ -3600,6 +3604,16 @@
 	)
 	(wire
 		(pts
+			(xy 185.42 64.77) (xy 185.42 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b246ccac-d605-4a4c-b4f5-b4ce41bf5e16")
+	)
+	(wire
+		(pts
 			(xy 87.63 91.44) (xy 102.87 91.44)
 		)
 		(stroke
@@ -3770,7 +3784,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 64.77) (xy 185.42 87.63)
+			(xy 185.42 82.55) (xy 185.42 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3996,6 +4010,108 @@
 			(project "ZRaider"
 				(path "/cee3fad8-cd38-4e35-ae79-7b381e15c120"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4001")
+		(at 185.42 78.74 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0c69f942-408e-400f-9b62-f48b0e07c1ba")
+		(property "Reference" "D2"
+			(at 182.88 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4001"
+			(at 188.722 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 185.42 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf"
+			(at 185.42 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "50V 1A General Purpose Rectifier Diode, DO-41"
+			(at 185.42 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 185.42 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 185.42 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "197b4551-686b-49c3-b5f3-de444f8726db")
+		)
+		(pin "2"
+			(uuid "a35db79c-73c9-4a92-9ddb-c9d02c3a9d32")
+		)
+		(instances
+			(project "ZRaider"
+				(path "/cee3fad8-cd38-4e35-ae79-7b381e15c120"
+					(reference "D2")
 					(unit 1)
 				)
 			)
