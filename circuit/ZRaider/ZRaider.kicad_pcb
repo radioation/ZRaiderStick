@@ -5639,7 +5639,7 @@
 			(remove_unused_layers no)
 			(net "unconnected-(A1-3V3-Pad17)")
 			(pinfunction "3V3_17")
-			(pintype "power_out")
+			(pintype "power_out+no_connect")
 			(uuid "6a94e7a3-6d3b-4b93-97b5-da43e5995e16")
 		)
 		(pad "18" thru_hole oval
@@ -5782,7 +5782,7 @@
 			(remove_unused_layers no)
 			(net "unconnected-(A1-VIN-Pad30)")
 			(pinfunction "VIN_30")
-			(pintype "power_in")
+			(pintype "power_in+no_connect")
 			(uuid "107565bf-f443-4215-ad14-8a4d90242241")
 		)
 		(embedded_fonts no)

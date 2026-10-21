@@ -3125,6 +3125,10 @@
 		(uuid "8e7f18ac-a446-4594-b51b-0f5aab076c64")
 	)
 	(no_connect
+		(at 185.42 31.75)
+		(uuid "98b8e3fc-9820-4772-b5f1-d5548a5483c3")
+	)
+	(no_connect
 		(at 219.71 106.68)
 		(uuid "a89eedb8-e6ff-4e43-8673-a46e36d47f35")
 	)
