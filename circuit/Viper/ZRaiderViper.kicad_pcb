@@ -10436,7 +10436,7 @@
 		(property "Reference" "J2"
 			(at -5.54 2.8 0)
 			(layer "B.SilkS")
-			(uuid "8ccea98f-7fe3-48dc-8525-9c0ad61a4320")
+			(uuid "8d32ecd7-a08d-462a-872a-bdf51d878a91")
 			(effects
 				(font
 					(size 1 1)
@@ -10448,7 +10448,7 @@
 		(property "Value" "DE9_Socket"
 			(at -5.54 -20.81 0)
 			(layer "B.Fab")
-			(uuid "2a49dbd7-58d5-4e39-b950-67423cee9984")
+			(uuid "931019af-a298-43f4-841e-5cb6e1767dc3")
 			(effects
 				(font
 					(size 1 1)
@@ -10461,7 +10461,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "bc115123-5704-4fa0-9d97-bcc0d167edbe")
+			(uuid "66e310c0-2585-49ff-94d9-3601a357b174")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10473,7 +10473,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "755d104a-6e01-4a78-a5ee-1a4d1ab52e5b")
+			(uuid "ff979d75-e765-4536-9724-7343efc58957")
 			(effects
 				(font
 					(size 1.27 1.27)
